@@ -1,7 +1,9 @@
 package study.ch01
 
-import java.time.LocalDateTime
-
 class Invitation(
-    val `when`: LocalDateTime
-)
+    val theater: Theater? = null
+) {
+    companion object {
+        val EMPTY: Invitation = Invitation()
+    }
+}
