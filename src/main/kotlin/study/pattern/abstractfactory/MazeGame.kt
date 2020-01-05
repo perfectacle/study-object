@@ -1,14 +1,16 @@
-package study.pattern.factorymethod
+package study.pattern.abstractfactory
 
 import study.pattern.Direction
 import study.pattern.Wall
 
-abstract class MazeGame {
+class MazeGame(
+    private val factory: MazeGameFactory
+) {
     fun create(): Maze {
-        val maze = Maze()
-        val room1 = Room(1)
-        val room2 = Room(2)
-        val door = createDoor(room1, room2)
+        val maze = factory.createMaze()
+        val room1 = factory.createRoom(1)
+        val room2 = factory.createRoom(2)
+        val door = factory.createDoor(room1, room2)
 
         maze.addRoom(room1)
         maze.addRoom(room2)
@@ -25,7 +27,4 @@ abstract class MazeGame {
 
         return maze
     }
-
-    protected abstract fun createRoom(number: Int): Room
-    protected abstract fun createDoor(room1: Room, room2: Room): Door
 }
