@@ -1,4 +1,4 @@
-package study.w04.practice.generic
+package study.w04.practice.base
 
 import study.w04.Program
 

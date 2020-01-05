@@ -1,10 +1,10 @@
-package study.w04.practice.generic
+package study.w04.practice.codespitz.v3
 
 import study.w04.Language
 import study.w04.Library
 
-class Client : Paper {
+abstract class Client : Paper {
     val library = Library("vueJS")
     val language = Language("kotlinJS")
-    lateinit var programmer: Programmer
+    lateinit var programmer: Programmer<Client>
 }

@@ -8,6 +8,8 @@ class Frontend : Programmer {
         if (paper is Client) {
             language = paper.language
             library = paper.library
+        } else if (paper is ServerClient) {
+            language = paper.frontendLanguage
         }
 
         return makeFrontendProgram()

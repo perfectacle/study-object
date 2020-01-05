@@ -1,4 +1,4 @@
-package study.w04.practice.generic
+package study.w04.practice.base
 
 import study.w04.Program
 
@@ -10,8 +10,7 @@ class Director {
     }
 
     fun runProject(name: String) {
-        if (!projects.containsKey(name)) throw RuntimeException("no project")
-        val paper = projects[name]
+        val paper = projects[name] ?: throw RuntimeException("no project")
         if (paper is ServerClient) {
             val frontend = Frontend()
             val backend = Backend()
